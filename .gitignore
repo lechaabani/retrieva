@@ -39,6 +39,11 @@ dashboard/node_modules/
 dashboard/.next/
 dashboard/out/
 
+# Website
+website/node_modules/
+website/.next/
+website/out/
+
 # Testing
 .coverage
 htmlcov/
