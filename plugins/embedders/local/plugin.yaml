@@ -1,0 +1,22 @@
+name: local
+type: embedder
+version: "1.0.0"
+description: "Local embedding model using sentence-transformers for on-device inference"
+author: "Retrieva Team"
+license: "MIT"
+entry_point: "plugin:LocalEmbedderPlugin"
+config_schema:
+  model:
+    type: string
+    default: "all-MiniLM-L6-v2"
+    description: "Sentence-transformers model name"
+  device:
+    type: string
+    default: "cpu"
+    description: "Device to run inference on (cpu, cuda)"
+dependencies: []
+tags:
+  - embedder
+  - local
+  - on-device
+bundled: true

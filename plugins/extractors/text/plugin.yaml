@@ -1,0 +1,15 @@
+name: text
+type: extractor
+version: "1.0.0"
+description: "Plain text file extractor"
+author: "Retrieva Team"
+license: "MIT"
+entry_point: "plugin:TextExtractorPlugin"
+config_schema: {}
+dependencies: []
+tags:
+  - extractor
+  - text
+  - plain
+  - ingestion
+bundled: true

@@ -1,0 +1,21 @@
+name: confluence
+type: connector
+version: "1.0.0"
+description: "Atlassian Confluence connector for ingesting wiki pages and spaces"
+author: "Retrieva Team"
+license: "MIT"
+entry_point: "plugin:ConfluenceConnectorPlugin"
+config_schema:
+  url:
+    type: string
+    description: "Confluence instance URL"
+  space_key:
+    type: string
+    description: "Confluence space key to ingest from"
+dependencies: []
+tags:
+  - connector
+  - confluence
+  - atlassian
+  - wiki
+bundled: true

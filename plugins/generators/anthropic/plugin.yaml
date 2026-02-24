@@ -1,0 +1,27 @@
+name: anthropic
+type: generator
+version: "1.0.0"
+description: "Anthropic LLM generator for response generation using Claude models"
+author: "Retrieva Team"
+license: "MIT"
+entry_point: "plugin:AnthropicGeneratorPlugin"
+config_schema:
+  model:
+    type: string
+    default: "claude-sonnet-4-20250514"
+    description: "Anthropic model name"
+  temperature:
+    type: number
+    default: 0.7
+    description: "Sampling temperature for generation"
+  max_tokens:
+    type: integer
+    default: 1024
+    description: "Maximum tokens in the generated response"
+dependencies: []
+tags:
+  - generator
+  - anthropic
+  - llm
+  - cloud
+bundled: true

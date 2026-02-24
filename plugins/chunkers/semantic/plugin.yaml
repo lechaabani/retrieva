@@ -1,0 +1,22 @@
+name: semantic
+type: chunker
+version: "1.0.0"
+description: "Semantic chunker that splits text based on meaning boundaries"
+author: "Retrieva Team"
+license: "MIT"
+entry_point: "plugin:SemanticChunkerPlugin"
+config_schema:
+  max_chunk_tokens:
+    type: integer
+    default: 512
+    description: "Maximum number of tokens per chunk"
+  min_chunk_tokens:
+    type: integer
+    default: 50
+    description: "Minimum number of tokens per chunk"
+dependencies: []
+tags:
+  - chunker
+  - semantic
+  - ingestion
+bundled: true

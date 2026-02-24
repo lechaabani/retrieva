@@ -1,0 +1,31 @@
+name: chatbot-widget
+type: template
+version: "1.0.0"
+description: "Embeddable chatbot widget for websites with customizable appearance"
+author: "Retrieva Team"
+license: "MIT"
+entry_point: "plugin:ChatbotWidgetPlugin"
+config_schema:
+  title:
+    type: string
+    default: "Chat with us"
+    description: "Widget header title"
+  position:
+    type: string
+    default: "bottom-right"
+    description: "Widget position on the page"
+  primary_color:
+    type: string
+    default: "#4F46E5"
+    description: "Primary theme color"
+  api_endpoint:
+    type: string
+    default: "/api/v1/chat"
+    description: "Backend API endpoint for chat"
+dependencies: []
+tags:
+  - template
+  - chatbot
+  - widget
+  - frontend
+bundled: true

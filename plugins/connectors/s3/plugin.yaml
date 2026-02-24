@@ -1,0 +1,26 @@
+name: s3
+type: connector
+version: "1.0.0"
+description: "AWS S3 connector for ingesting documents from S3 buckets"
+author: "Retrieva Team"
+license: "MIT"
+entry_point: "plugin:S3ConnectorPlugin"
+config_schema:
+  bucket:
+    type: string
+    description: "S3 bucket name"
+  prefix:
+    type: string
+    default: ""
+    description: "S3 key prefix to filter objects"
+  region:
+    type: string
+    default: "us-east-1"
+    description: "AWS region for the S3 bucket"
+dependencies: []
+tags:
+  - connector
+  - s3
+  - aws
+  - cloud
+bundled: true

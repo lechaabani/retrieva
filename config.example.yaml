@@ -1,0 +1,105 @@
+# ============================================================================
+# Retrieva - RAG Platform Configuration
+# ============================================================================
+# Copy this file to config.yaml and adjust values for your environment.
+# Environment variables can override any setting using the RETRIEVA_ prefix.
+# ============================================================================
+
+# -- Platform settings -------------------------------------------------------
+platform:
+  name: "My Organization"
+  language: "en"
+
+# -- Data sources -------------------------------------------------------------
+# Define one or more sources that feed documents into the pipeline.
+sources:
+  - name: "Documents"
+    connector: file_upload
+    path: /data/documents/
+  # - name: "Confluence"
+  #   connector: confluence
+  #   url: https://your-org.atlassian.net/wiki
+  #   space_key: DOCS
+  #   auth_token: ${CONFLUENCE_TOKEN}
+  # - name: "Website"
+  #   connector: web_crawler
+  #   url: https://docs.example.com
+  #   max_depth: 3
+  #   allowed_domains:
+  #     - docs.example.com
+
+# -- Ingestion pipeline -------------------------------------------------------
+ingestion:
+  chunking:
+    strategy: semantic            # semantic | fixed | recursive | sentence
+    max_chunk_size: 512           # maximum tokens per chunk
+    overlap: 50                   # token overlap between consecutive chunks
+  embedding:
+    provider: openai              # openai | sentence-transformers
+    model: text-embedding-3-small
+    # For local models:
+    # provider: sentence-transformers
+    # model: all-MiniLM-L6-v2
+    # device: cpu                 # cpu | cuda
+
+# -- Retrieval settings -------------------------------------------------------
+retrieval:
+  strategy: hybrid                # vector | keyword | hybrid
+  vector_weight: 0.7              # weight for vector search in hybrid mode (0.0 - 1.0)
+  top_k: 10                       # number of chunks to retrieve
+  reranking: true                 # enable cross-encoder reranking
+  reranker_model: cross-encoder/ms-marco-MiniLM-L-6-v2
+  min_relevance_score: 0.5        # discard chunks below this relevance threshold
+
+# -- Generation settings -------------------------------------------------------
+generation:
+  provider: openai                # openai | anthropic
+  model: gpt-4o-mini
+  persona: |
+    You are a helpful AI assistant.
+    Answer questions based only on the provided documents.
+    Always cite your sources.
+    If you don't know the answer, say so clearly.
+  max_tokens: 1000
+  temperature: 0.1
+  # For Anthropic:
+  # provider: anthropic
+  # model: claude-sonnet-4-20250514
+
+# -- Permissions & access control ----------------------------------------------
+permissions:
+  enabled: false
+  roles:
+    admin:
+      access: "*"
+    # viewer:
+    #   access:
+    #     - "Documents"
+    #     - "Website"
+
+# -- Vector database -----------------------------------------------------------
+vector_db:
+  provider: qdrant                # qdrant
+  url: http://qdrant:6333
+  # api_key: ${QDRANT_API_KEY}   # uncomment for Qdrant Cloud
+  # collection_prefix: retrieva   # optional prefix for collection names
+
+# -- Relational database -------------------------------------------------------
+database:
+  url: postgresql+asyncpg://retrieva:retrieva@postgres:5432/retrieva
+  pool_size: 10
+  max_overflow: 20
+  pool_recycle: 3600              # seconds
+
+# -- Redis ---------------------------------------------------------------------
+redis:
+  url: redis://redis:6379/0
+
+# -- Analytics & observability -------------------------------------------------
+analytics:
+  enabled: true
+  log_queries: true
+  log_answers: true
+  # export:
+  #   provider: prometheus
+  #   port: 9090

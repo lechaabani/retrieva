@@ -1,0 +1,32 @@
+name: slack
+type: connector
+version: "1.0.0"
+description: "Slack connector for ingesting channel message history via the Slack Web API"
+author: "Retrieva Team"
+license: "MIT"
+entry_point: "plugin:SlackConnectorPlugin"
+config_schema:
+  bot_token:
+    type: string
+    description: "Slack Bot User OAuth Token (xoxb-...)"
+  channel_ids:
+    type: array
+    description: "Specific Slack channel IDs to pull from"
+  channel_names:
+    type: array
+    description: "Channel names (without #) to resolve and pull from"
+  days_back:
+    type: integer
+    default: 30
+    description: "Number of days of history to pull"
+  include_threads:
+    type: boolean
+    default: true
+    description: "Whether to fetch full thread replies"
+dependencies: []
+tags:
+  - connector
+  - slack
+  - messaging
+  - chat
+bundled: true

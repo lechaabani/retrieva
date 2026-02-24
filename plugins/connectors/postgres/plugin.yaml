@@ -1,0 +1,54 @@
+name: postgres
+type: connector
+version: "1.0.0"
+description: "PostgreSQL connector for ingesting documents from database tables and queries"
+author: "Retrieva Team"
+license: "MIT"
+entry_point: "plugin:PostgresConnectorPlugin"
+config_schema:
+  dsn:
+    type: string
+    description: "Full PostgreSQL connection string (postgresql://user:pass@host:port/db)"
+  host:
+    type: string
+    default: "localhost"
+    description: "Database host"
+  port:
+    type: integer
+    default: 5432
+    description: "Database port"
+  database:
+    type: string
+    default: "postgres"
+    description: "Database name"
+  user:
+    type: string
+    default: "postgres"
+    description: "Database user"
+  password:
+    type: string
+    description: "Database password"
+  tables:
+    type: array
+    description: "List of table names to pull from"
+  query:
+    type: string
+    description: "Custom SQL query to execute"
+  content_columns:
+    type: array
+    description: "Column names whose values form the document content"
+  title_column:
+    type: string
+    description: "Column name to use as the document title"
+  max_rows:
+    type: integer
+    default: 1000
+    description: "Maximum rows to retrieve per table or query"
+dependencies: []
+tags:
+  - connector
+  - postgres
+  - postgresql
+  - database
+  - sql
+bundled: true

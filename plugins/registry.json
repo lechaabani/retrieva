@@ -1,0 +1,65 @@
+{
+  "version": "1.0",
+  "connectors": [
+    {
+      "name": "file_upload",
+      "type": "builtin",
+      "description": "Upload and index files (PDF, Word, Excel, TXT, MD, CSV)",
+      "module": "core.connectors.file_upload"
+    },
+    {
+      "name": "url_crawler",
+      "type": "builtin",
+      "description": "Crawl and index web pages from a URL",
+      "module": "core.connectors.url_crawler"
+    },
+    {
+      "name": "s3",
+      "type": "builtin",
+      "description": "Index files from Amazon S3 or compatible storage",
+      "module": "core.connectors.s3"
+    },
+    {
+      "name": "postgres",
+      "type": "builtin",
+      "description": "Index data from PostgreSQL databases",
+      "module": "core.connectors.postgres_connector"
+    },
+    {
+      "name": "google_drive",
+      "type": "builtin",
+      "status": "coming_soon",
+      "description": "Index files from Google Drive",
+      "module": "core.connectors.google_drive"
+    },
+    {
+      "name": "notion",
+      "type": "builtin",
+      "status": "coming_soon",
+      "description": "Index pages and databases from Notion",
+      "module": "core.connectors.notion"
+    },
+    {
+      "name": "confluence",
+      "type": "builtin",
+      "status": "coming_soon",
+      "description": "Index spaces and pages from Confluence",
+      "module": "core.connectors.confluence"
+    },
+    {
+      "name": "slack",
+      "type": "builtin",
+      "status": "coming_soon",
+      "description": "Index channel history from Slack",
+      "module": "core.connectors.slack"
+    },
+    {
+      "name": "github",
+      "type": "builtin",
+      "status": "coming_soon",
+      "description": "Index repos, issues, and wikis from GitHub",
+      "module": "core.connectors.github_connector"
+    }
+  ],
+  "community": []
+}

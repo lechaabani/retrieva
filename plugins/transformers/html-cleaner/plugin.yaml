@@ -1,0 +1,14 @@
+name: html-cleaner
+type: transformer
+version: "1.0.0"
+description: "Strips HTML tags, decodes entities, and normalises whitespace"
+author: "Retrieva Team"
+license: "MIT"
+entry_point: "plugin:HTMLCleanerPlugin"
+config_schema: {}
+dependencies: []
+tags:
+  - transformer
+  - html
+  - cleaner
+bundled: true

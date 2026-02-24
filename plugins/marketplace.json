@@ -1,0 +1,429 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-02-23",
+  "plugins": [
+    {
+      "name": "qdrant-vector-store",
+      "title": "Qdrant",
+      "description": "Base de donnees vectorielle haute performance. Recommande pour la production.",
+      "category": "retriever",
+      "version": "1.0.0",
+      "author": "Retrieva",
+      "icon": "database",
+      "tags": ["vector-db", "production", "scalable"],
+      "config_schema": {
+        "url": { "type": "string", "default": "http://localhost:6333", "label": "Qdrant URL" },
+        "api_key": { "type": "string", "default": "", "label": "API Key (optionnel)", "secret": true },
+        "collection_prefix": { "type": "string", "default": "retrieva_", "label": "Prefixe des collections" }
+      }
+    },
+    {
+      "name": "chromadb-vector-store",
+      "title": "ChromaDB",
+      "description": "Base vectorielle open-source, ideale pour le developpement et les petits projets.",
+      "category": "retriever",
+      "version": "1.0.0",
+      "author": "Retrieva",
+      "icon": "database",
+      "tags": ["vector-db", "development", "open-source"],
+      "config_schema": {
+        "host": { "type": "string", "default": "localhost", "label": "Host" },
+        "port": { "type": "number", "default": 8000, "label": "Port" }
+      }
+    },
+    {
+      "name": "pgvector-store",
+      "title": "PgVector",
+      "description": "Extension PostgreSQL pour les vecteurs. Utilise votre base existante.",
+      "category": "retriever",
+      "version": "1.0.0",
+      "author": "Retrieva",
+      "icon": "database",
+      "tags": ["vector-db", "postgresql", "simple"],
+      "config_schema": {
+        "connection_string": { "type": "string", "default": "", "label": "Connection PostgreSQL", "secret": true }
+      }
+    },
+    {
+      "name": "pinecone-vector-store",
+      "title": "Pinecone",
+      "description": "Base vectorielle cloud managee. Zero infrastructure a gerer.",
+      "category": "retriever",
+      "version": "1.0.0",
+      "author": "Retrieva",
+      "icon": "cloud",
+      "tags": ["vector-db", "cloud", "managed"],
+      "config_schema": {
+        "api_key": { "type": "string", "label": "API Key", "secret": true },
+        "environment": { "type": "string", "default": "us-east-1", "label": "Environnement" },
+        "index_name": { "type": "string", "default": "retrieva", "label": "Nom de l'index" }
+      }
+    },
+    {
+      "name": "weaviate-vector-store",
+      "title": "Weaviate",
+      "description": "Base vectorielle avec recherche hybride native (vecteur + BM25).",
+      "category": "retriever",
+      "version": "1.0.0",
+      "author": "Retrieva",
+      "icon": "database",
+      "tags": ["vector-db", "hybrid-search", "open-source"],
+      "config_schema": {
+        "url": { "type": "string", "default": "http://localhost:8080", "label": "Weaviate URL" },
+        "api_key": { "type": "string", "default": "", "label": "API Key", "secret": true }
+      }
+    },
+    {
+      "name": "openai-embedder",
+      "title": "OpenAI Embeddings",
+      "description": "text-embedding-3-small/large. Meilleur rapport qualite/prix pour l'embedding.",
+      "category": "embedder",
+      "version": "1.0.0",
+      "author": "Retrieva",
+      "icon": "brain",
+      "tags": ["embedding", "cloud", "recommended"],
+      "config_schema": {
+        "api_key": { "type": "string", "label": "OpenAI API Key", "secret": true },
+        "model": { "type": "select", "default": "text-embedding-3-small", "label": "Modele", "options": ["text-embedding-3-small", "text-embedding-3-large", "text-embedding-ada-002"] }
+      }
+    },
+    {
+      "name": "cohere-embedder",
+      "title": "Cohere Embeddings",
+      "description": "embed-multilingual-v3. Excellent pour le contenu multilingue.",
+      "category": "embedder",
+      "version": "1.0.0",
+      "author": "Retrieva",
+      "icon": "brain",
+      "tags": ["embedding", "multilingual", "cloud"],
+      "config_schema": {
+        "api_key": { "type": "string", "label": "Cohere API Key", "secret": true },
+        "model": { "type": "select", "default": "embed-multilingual-v3.0", "label": "Modele", "options": ["embed-multilingual-v3.0", "embed-english-v3.0", "embed-multilingual-light-v3.0"] }
+      }
+    },
+    {
+      "name": "huggingface-embedder",
+      "title": "HuggingFace Local",
+      "description": "Modeles d'embedding locaux via sentence-transformers. Gratuit, sans API key.",
+      "category": "embedder",
+      "version": "1.0.0",
+      "author": "Retrieva",
+      "icon": "cpu",
+      "tags": ["embedding", "local", "free", "open-source"],
+      "config_schema": {
+        "model_name": { "type": "string", "default": "all-MiniLM-L6-v2", "label": "Nom du modele" },
+        "device": { "type": "select", "default": "cpu", "label": "Device", "options": ["cpu", "cuda"] }
+      }
+    },
+    {
+      "name": "ollama-embedder",
+      "title": "Ollama Embeddings",
+      "description": "Embedding via Ollama. Fonctionne avec nomic-embed-text, mxbai-embed-large.",
+      "category": "embedder",
+      "version": "1.0.0",
+      "author": "Retrieva",
+      "icon": "server",
+      "tags": ["embedding", "local", "free"],
+      "config_schema": {
+        "base_url": { "type": "string", "default": "http://localhost:11434", "label": "Ollama URL" },
+        "model": { "type": "string", "default": "nomic-embed-text", "label": "Modele" }
+      }
+    },
+    {
+      "name": "openai-generator",
+      "title": "OpenAI GPT",
+      "description": "GPT-4o, GPT-4o-mini. Le generateur le plus populaire pour le RAG.",
+      "category": "generator",
+      "version": "1.0.0",
+      "author": "Retrieva",
+      "icon": "sparkles",
+      "tags": ["generation", "cloud", "recommended"],
+      "config_schema": {
+        "api_key": { "type": "string", "label": "OpenAI API Key", "secret": true },
+        "model": { "type": "select", "default": "gpt-4o-mini", "label": "Modele", "options": ["gpt-4o", "gpt-4o-mini", "gpt-4-turbo", "gpt-3.5-turbo"] },
+        "temperature": { "type": "number", "default": 0.7, "label": "Temperature", "min": 0, "max": 2 },
+        "max_tokens": { "type": "number", "default": 1024, "label": "Max tokens", "min": 100, "max": 4096 }
+      }
+    },
+    {
+      "name": "anthropic-generator",
+      "title": "Anthropic Claude",
+      "description": "Claude Sonnet 4.5, Opus 4.6. Excellent pour les reponses longues et nuancees.",
+      "category": "generator",
+      "version": "1.0.0",
+      "author": "Retrieva",
+      "icon": "sparkles",
+      "tags": ["generation", "cloud", "high-quality"],
+      "config_schema": {
+        "api_key": { "type": "string", "label": "Anthropic API Key", "secret": true },
+        "model": { "type": "select", "default": "claude-sonnet-4-5-20250929", "label": "Modele", "options": ["claude-opus-4-6", "claude-sonnet-4-5-20250929", "claude-haiku-4-5-20251001"] },
+        "temperature": { "type": "number", "default": 0.7, "label": "Temperature", "min": 0, "max": 1 },
+        "max_tokens": { "type": "number", "default": 1024, "label": "Max tokens", "min": 100, "max": 4096 }
+      }
+    },
+    {
+      "name": "ollama-generator",
+      "title": "Ollama (Local LLM)",
+      "description": "Llama 3, Mistral, Phi-3 en local. Gratuit, donnees restent sur votre serveur.",
+      "category": "generator",
+      "version": "1.0.0",
+      "author": "Retrieva",
+      "icon": "server",
+      "tags": ["generation", "local", "free", "privacy"],
+      "config_schema": {
+        "base_url": { "type": "string", "default": "http://localhost:11434", "label": "Ollama URL" },
+        "model": { "type": "string", "default": "llama3.1", "label": "Modele" },
+        "temperature": { "type": "number", "default": 0.7, "label": "Temperature", "min": 0, "max": 2 }
+      }
+    },
+    {
+      "name": "mistral-generator",
+      "title": "Mistral AI",
+      "description": "Mistral Large, Mistral Small. Modeles europeens performants.",
+      "category": "generator",
+      "version": "1.0.0",
+      "author": "Retrieva",
+      "icon": "sparkles",
+      "tags": ["generation", "cloud", "european"],
+      "config_schema": {
+        "api_key": { "type": "string", "label": "Mistral API Key", "secret": true },
+        "model": { "type": "select", "default": "mistral-small-latest", "label": "Modele", "options": ["mistral-large-latest", "mistral-small-latest", "mistral-medium-latest"] }
+      }
+    },
+    {
+      "name": "fixed-chunker",
+      "title": "Fixed Size Chunker",
+      "description": "Decoupe les documents en chunks de taille fixe avec overlap. Simple et efficace.",
+      "category": "chunker",
+      "version": "1.0.0",
+      "author": "Retrieva",
+      "icon": "scissors",
+      "tags": ["chunking", "simple", "default"],
+      "config_schema": {
+        "chunk_size": { "type": "number", "default": 512, "label": "Taille du chunk (tokens)", "min": 100, "max": 4000 },
+        "chunk_overlap": { "type": "number", "default": 50, "label": "Overlap (tokens)", "min": 0, "max": 500 }
+      }
+    },
+    {
+      "name": "semantic-chunker",
+      "title": "Semantic Chunker",
+      "description": "Decoupe intelligente basee sur le sens. Meilleure qualite pour le RAG.",
+      "category": "chunker",
+      "version": "1.0.0",
+      "author": "Retrieva",
+      "icon": "scissors",
+      "tags": ["chunking", "smart", "quality"],
+      "config_schema": {
+        "threshold": { "type": "number", "default": 0.5, "label": "Seuil de similarite", "min": 0.1, "max": 0.9 },
+        "min_chunk_size": { "type": "number", "default": 100, "label": "Taille min (tokens)", "min": 50, "max": 500 },
+        "max_chunk_size": { "type": "number", "default": 1000, "label": "Taille max (tokens)", "min": 200, "max": 4000 }
+      }
+    },
+    {
+      "name": "document-chunker",
+      "title": "Document Structure Chunker",
+      "description": "Respecte la structure du document (titres, sections, paragraphes).",
+      "category": "chunker",
+      "version": "1.0.0",
+      "author": "Retrieva",
+      "icon": "file-text",
+      "tags": ["chunking", "structure", "markdown"],
+      "config_schema": {
+        "heading_levels": { "type": "string", "default": "h1,h2,h3", "label": "Niveaux de titres" }
+      }
+    },
+    {
+      "name": "s3-connector",
+      "title": "Amazon S3",
+      "description": "Ingestion automatique depuis un bucket S3. Supporte PDF, DOCX, TXT.",
+      "category": "connector",
+      "version": "1.0.0",
+      "author": "Retrieva",
+      "icon": "cloud",
+      "tags": ["connector", "aws", "cloud"],
+      "config_schema": {
+        "bucket_name": { "type": "string", "label": "Nom du bucket" },
+        "aws_access_key": { "type": "string", "label": "AWS Access Key", "secret": true },
+        "aws_secret_key": { "type": "string", "label": "AWS Secret Key", "secret": true },
+        "region": { "type": "string", "default": "eu-west-1", "label": "Region" },
+        "prefix": { "type": "string", "default": "", "label": "Prefixe (dossier)" }
+      }
+    },
+    {
+      "name": "google-drive-connector",
+      "title": "Google Drive",
+      "description": "Synchronise les documents depuis Google Drive. Docs, Sheets, PDF.",
+      "category": "connector",
+      "version": "1.0.0",
+      "author": "Retrieva",
+      "icon": "hard-drive",
+      "tags": ["connector", "google", "cloud"],
+      "config_schema": {
+        "credentials_json": { "type": "string", "label": "Service Account JSON", "secret": true },
+        "folder_id": { "type": "string", "default": "", "label": "ID du dossier (vide = tout)" }
+      }
+    },
+    {
+      "name": "notion-connector",
+      "title": "Notion",
+      "description": "Importe les pages et bases de donnees Notion. Sync automatique.",
+      "category": "connector",
+      "version": "1.0.0",
+      "author": "Retrieva",
+      "icon": "book-open",
+      "tags": ["connector", "notion", "knowledge-base"],
+      "config_schema": {
+        "api_key": { "type": "string", "label": "Notion Integration Token", "secret": true },
+        "root_page_id": { "type": "string", "default": "", "label": "Page racine (vide = tout)" }
+      }
+    },
+    {
+      "name": "confluence-connector",
+      "title": "Confluence",
+      "description": "Synchronise les espaces et pages Confluence. Ideal pour la doc interne.",
+      "category": "connector",
+      "version": "1.0.0",
+      "author": "Retrieva",
+      "icon": "globe",
+      "tags": ["connector", "atlassian", "enterprise"],
+      "config_schema": {
+        "base_url": { "type": "string", "label": "Confluence URL" },
+        "username": { "type": "string", "label": "Email" },
+        "api_token": { "type": "string", "label": "API Token", "secret": true },
+        "space_key": { "type": "string", "default": "", "label": "Space Key (vide = tout)" }
+      }
+    },
+    {
+      "name": "github-connector",
+      "title": "GitHub",
+      "description": "Ingestion depuis un repo GitHub. README, docs, wiki, issues.",
+      "category": "connector",
+      "version": "1.0.0",
+      "author": "Retrieva",
+      "icon": "git-branch",
+      "tags": ["connector", "github", "code"],
+      "config_schema": {
+        "token": { "type": "string", "label": "GitHub Personal Access Token", "secret": true },
+        "repo": { "type": "string", "label": "Repository (owner/repo)" },
+        "branch": { "type": "string", "default": "main", "label": "Branche" },
+        "include_patterns": { "type": "string", "default": "*.md,*.txt,*.rst", "label": "Fichiers a inclure (glob)" }
+      }
+    },
+    {
+      "name": "slack-connector",
+      "title": "Slack",
+      "description": "Importe les messages et fichiers depuis les canaux Slack.",
+      "category": "connector",
+      "version": "1.0.0",
+      "author": "Retrieva",
+      "icon": "message-square",
+      "tags": ["connector", "slack", "messaging"],
+      "config_schema": {
+        "bot_token": { "type": "string", "label": "Slack Bot Token", "secret": true },
+        "channels": { "type": "string", "default": "", "label": "Canaux (separes par virgule, vide = tout)" }
+      }
+    },
+    {
+      "name": "rest-api-connector",
+      "title": "REST API",
+      "description": "Connecteur generique pour n'importe quelle API REST. JSONPath pour l'extraction.",
+      "category": "connector",
+      "version": "1.0.0",
+      "author": "Retrieva",
+      "icon": "link",
+      "tags": ["connector", "api", "generic"],
+      "config_schema": {
+        "base_url": { "type": "string", "label": "URL de base" },
+        "auth_header": { "type": "string", "default": "", "label": "Header d'auth (ex: Bearer xxx)", "secret": true },
+        "endpoint": { "type": "string", "default": "/", "label": "Endpoint" },
+        "content_path": { "type": "string", "default": "$.data[*].content", "label": "JSONPath vers le contenu" }
+      }
+    },
+    {
+      "name": "cohere-reranker",
+      "title": "Cohere Reranker",
+      "description": "Reranking des resultats avec Cohere rerank-v3. Ameliore la precision de 15-30%.",
+      "category": "reranker",
+      "version": "1.0.0",
+      "author": "Retrieva",
+      "icon": "arrow-up-down",
+      "tags": ["reranking", "quality", "cloud"],
+      "config_schema": {
+        "api_key": { "type": "string", "label": "Cohere API Key", "secret": true },
+        "model": { "type": "select", "default": "rerank-multilingual-v3.0", "label": "Modele", "options": ["rerank-multilingual-v3.0", "rerank-english-v3.0"] },
+        "top_n": { "type": "number", "default": 5, "label": "Top N resultats", "min": 1, "max": 20 }
+      }
+    },
+    {
+      "name": "cross-encoder-reranker",
+      "title": "Cross-Encoder Local",
+      "description": "Reranking local avec cross-encoder/ms-marco. Gratuit, sans API.",
+      "category": "reranker",
+      "version": "1.0.0",
+      "author": "Retrieva",
+      "icon": "arrow-up-down",
+      "tags": ["reranking", "local", "free"],
+      "config_schema": {
+        "model_name": { "type": "string", "default": "cross-encoder/ms-marco-MiniLM-L-6-v2", "label": "Modele" },
+        "device": { "type": "select", "default": "cpu", "label": "Device", "options": ["cpu", "cuda"] }
+      }
+    },
+    {
+      "name": "pii-guardrail",
+      "title": "PII Detection",
+      "description": "Detecte et masque les donnees personnelles (email, telephone, SSN) dans les reponses.",
+      "category": "guardrail",
+      "version": "1.0.0",
+      "author": "Retrieva",
+      "icon": "shield",
+      "tags": ["security", "privacy", "compliance"],
+      "config_schema": {
+        "mask_emails": { "type": "boolean", "default": true, "label": "Masquer les emails" },
+        "mask_phones": { "type": "boolean", "default": true, "label": "Masquer les telephones" },
+        "mask_pattern": { "type": "string", "default": "***", "label": "Caractere de masquage" }
+      }
+    },
+    {
+      "name": "toxicity-guardrail",
+      "title": "Toxicity Filter",
+      "description": "Filtre les contenus toxiques, offensants ou inappropries des reponses.",
+      "category": "guardrail",
+      "version": "1.0.0",
+      "author": "Retrieva",
+      "icon": "shield-alert",
+      "tags": ["security", "moderation", "safety"],
+      "config_schema": {
+        "threshold": { "type": "number", "default": 0.7, "label": "Seuil de toxicite", "min": 0.1, "max": 1.0 },
+        "block_response": { "type": "boolean", "default": true, "label": "Bloquer les reponses toxiques" }
+      }
+    },
+    {
+      "name": "metadata-enricher",
+      "title": "Metadata Enricher",
+      "description": "Enrichit automatiquement les documents avec des metadonnees (langue, date, entites).",
+      "category": "transformer",
+      "version": "1.0.0",
+      "author": "Retrieva",
+      "icon": "tags",
+      "tags": ["transformer", "metadata", "enrichment"],
+      "config_schema": {
+        "detect_language": { "type": "boolean", "default": true, "label": "Detecter la langue" },
+        "extract_entities": { "type": "boolean", "default": false, "label": "Extraire les entites" }
+      }
+    },
+    {
+      "name": "html-cleaner",
+      "title": "HTML Cleaner",
+      "description": "Nettoie le HTML et extrait le texte propre. Supprime scripts, styles, nav.",
+      "category": "transformer",
+      "version": "1.0.0",
+      "author": "Retrieva",
+      "icon": "code",
+      "tags": ["transformer", "cleaning", "html"],
+      "config_schema": {
+        "remove_nav": { "type": "boolean", "default": true, "label": "Supprimer la navigation" },
+        "remove_footer": { "type": "boolean", "default": true, "label": "Supprimer le footer" }
+      }
+    }
+  ]
+}

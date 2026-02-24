@@ -1,0 +1,14 @@
+name: pdf
+type: extractor
+version: "1.0.0"
+description: "PDF document text extractor"
+author: "Retrieva Team"
+license: "MIT"
+entry_point: "plugin:PDFExtractorPlugin"
+config_schema: {}
+dependencies: []
+tags:
+  - extractor
+  - pdf
+  - ingestion
+bundled: true

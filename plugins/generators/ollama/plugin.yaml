@@ -1,0 +1,27 @@
+name: ollama
+type: generator
+version: "1.0.0"
+description: "Ollama LLM generator for local model inference"
+author: "Retrieva Team"
+license: "MIT"
+entry_point: "plugin:OllamaGeneratorPlugin"
+config_schema:
+  model:
+    type: string
+    default: "llama3"
+    description: "Ollama model name"
+  temperature:
+    type: number
+    default: 0.7
+    description: "Sampling temperature for generation"
+  max_tokens:
+    type: integer
+    default: 1024
+    description: "Maximum tokens in the generated response"
+dependencies: []
+tags:
+  - generator
+  - ollama
+  - llm
+  - local
+bundled: true

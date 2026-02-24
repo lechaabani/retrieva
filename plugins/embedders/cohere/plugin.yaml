@@ -1,0 +1,18 @@
+name: cohere
+type: embedder
+version: "1.0.0"
+description: "Cohere embedding model integration for embed-english-v3.0 and other models"
+author: "Retrieva Team"
+license: "MIT"
+entry_point: "plugin:CohereEmbedderPlugin"
+config_schema:
+  model:
+    type: string
+    default: "embed-english-v3.0"
+    description: "Cohere embedding model name"
+dependencies: []
+tags:
+  - embedder
+  - cohere
+  - cloud
+bundled: true

@@ -1,0 +1,14 @@
+name: document
+type: chunker
+version: "1.0.0"
+description: "Document-aware chunker that respects document structure boundaries"
+author: "Retrieva Team"
+license: "MIT"
+entry_point: "plugin:DocumentChunkerPlugin"
+config_schema: {}
+dependencies: []
+tags:
+  - chunker
+  - document
+  - ingestion
+bundled: true

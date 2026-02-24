@@ -1,0 +1,15 @@
+name: html
+type: extractor
+version: "1.0.0"
+description: "HTML document text extractor with tag stripping"
+author: "Retrieva Team"
+license: "MIT"
+entry_point: "plugin:HTMLExtractorPlugin"
+config_schema: {}
+dependencies: []
+tags:
+  - extractor
+  - html
+  - web
+  - ingestion
+bundled: true

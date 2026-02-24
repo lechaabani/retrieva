@@ -1,0 +1,169 @@
+.retrieva-widget {
+  --retrieva-primary: #4F46E5;
+  --retrieva-primary-hover: #4338CA;
+  --retrieva-text: #FFFFFF;
+  position: fixed;
+  z-index: 9999;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.retrieva-widget.bottom-right {
+  bottom: 20px;
+  right: 20px;
+}
+
+.retrieva-widget.bottom-left {
+  bottom: 20px;
+  left: 20px;
+}
+
+.retrieva-widget-toggle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--retrieva-primary);
+  color: var(--retrieva-text);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s;
+}
+
+.retrieva-widget-toggle:hover {
+  transform: scale(1.05);
+}
+
+.retrieva-widget-panel {
+  display: none;
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  width: 360px;
+  height: 480px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.retrieva-widget.bottom-left .retrieva-widget-panel {
+  right: auto;
+  left: 0;
+}
+
+.retrieva-widget.open .retrieva-widget-panel {
+  display: flex;
+}
+
+.retrieva-widget-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: var(--retrieva-primary);
+  color: var(--retrieva-text);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.retrieva-widget-close {
+  background: none;
+  border: none;
+  color: var(--retrieva-text);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.retrieva-widget-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.retrieva-message {
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  max-width: 80%;
+  font-size: 14px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.retrieva-message-user {
+  background: var(--retrieva-primary);
+  color: var(--retrieva-text);
+  margin-left: auto;
+  border-bottom-right-radius: 4px;
+}
+
+.retrieva-message-assistant {
+  background: #F3F4F6;
+  color: #1F2937;
+  border-bottom-left-radius: 4px;
+}
+
+.retrieva-message-typing {
+  opacity: 0.6;
+  animation: retrieva-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes retrieva-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.retrieva-message-sources {
+  background: #F9FAFB;
+  font-size: 12px;
+  padding: 8px 12px;
+  max-width: 80%;
+}
+
+.retrieva-source-item {
+  padding: 4px 0;
+  color: #6B7280;
+}
+
+.retrieva-source-title {
+  font-weight: 500;
+  color: var(--retrieva-primary);
+}
+
+.retrieva-widget-input {
+  display: flex;
+  padding: 12px;
+  border-top: 1px solid #E5E7EB;
+  gap: 8px;
+}
+
+.retrieva-widget-input input {
+  flex: 1;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+  outline: none;
+}
+
+.retrieva-widget-input input:focus {
+  border-color: var(--retrieva-primary);
+}
+
+.retrieva-widget-send {
+  background: var(--retrieva-primary);
+  color: var(--retrieva-text);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.retrieva-widget-send:hover {
+  background: var(--retrieva-primary-hover);
+}

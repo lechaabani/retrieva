@@ -1,0 +1,23 @@
+name: hybrid
+type: retriever
+version: "1.0.0"
+description: "Hybrid retriever combining vector similarity and keyword search"
+author: "Retrieva Team"
+license: "MIT"
+entry_point: "plugin:HybridRetrieverPlugin"
+config_schema:
+  top_k:
+    type: integer
+    default: 10
+    description: "Number of top results to return"
+  vector_weight:
+    type: number
+    default: 0.7
+    description: "Weight for vector search results in hybrid scoring"
+dependencies: []
+tags:
+  - retriever
+  - hybrid
+  - vector
+  - keyword
+bundled: true

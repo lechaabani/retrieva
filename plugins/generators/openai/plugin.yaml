@@ -1,0 +1,27 @@
+name: openai
+type: generator
+version: "1.0.0"
+description: "OpenAI LLM generator for response generation using GPT models"
+author: "Retrieva Team"
+license: "MIT"
+entry_point: "plugin:OpenAIGeneratorPlugin"
+config_schema:
+  model:
+    type: string
+    default: "gpt-4"
+    description: "OpenAI model name"
+  temperature:
+    type: number
+    default: 0.7
+    description: "Sampling temperature for generation"
+  max_tokens:
+    type: integer
+    default: 1024
+    description: "Maximum tokens in the generated response"
+dependencies: []
+tags:
+  - generator
+  - openai
+  - llm
+  - cloud
+bundled: true

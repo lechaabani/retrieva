@@ -1,0 +1,34 @@
+name: google-drive
+type: connector
+version: "1.0.0"
+description: "Google Drive connector for ingesting documents via OAuth2 and the Drive API"
+author: "Retrieva Team"
+license: "MIT"
+entry_point: "plugin:GoogleDriveConnectorPlugin"
+config_schema:
+  service_account_json:
+    type: string
+    description: "Path to a Google service-account JSON key file"
+  credentials_json:
+    type: string
+    description: "Path to an OAuth2 client-credentials JSON file"
+  folder_id:
+    type: string
+    default: ""
+    description: "Google Drive folder ID to restrict listing"
+  include_shared:
+    type: boolean
+    default: false
+    description: "Include files shared with the user"
+  max_files:
+    type: integer
+    default: 200
+    description: "Maximum number of files to retrieve"
+dependencies: []
+tags:
+  - connector
+  - google-drive
+  - google
+  - cloud
+  - oauth
+bundled: true

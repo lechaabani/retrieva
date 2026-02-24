@@ -1,0 +1,15 @@
+name: excel
+type: extractor
+version: "1.0.0"
+description: "Microsoft Excel spreadsheet text extractor"
+author: "Retrieva Team"
+license: "MIT"
+entry_point: "plugin:ExcelExtractorPlugin"
+config_schema: {}
+dependencies: []
+tags:
+  - extractor
+  - excel
+  - spreadsheet
+  - ingestion
+bundled: true

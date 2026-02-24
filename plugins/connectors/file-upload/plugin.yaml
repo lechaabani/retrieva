@@ -1,0 +1,18 @@
+name: file-upload
+type: connector
+version: "1.0.0"
+description: "File upload connector for ingesting documents from local filesystem"
+author: "Retrieva Team"
+license: "MIT"
+entry_point: "plugin:FileUploadConnectorPlugin"
+config_schema:
+  upload_dir:
+    type: string
+    default: "/data/documents"
+    description: "Directory path for uploaded documents"
+dependencies: []
+tags:
+  - connector
+  - file-upload
+  - local
+bundled: true

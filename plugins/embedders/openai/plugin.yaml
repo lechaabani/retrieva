@@ -1,0 +1,22 @@
+name: openai
+type: embedder
+version: "1.0.0"
+description: "OpenAI embedding model integration for text-embedding-3-small and other models"
+author: "Retrieva Team"
+license: "MIT"
+entry_point: "plugin:OpenAIEmbedderPlugin"
+config_schema:
+  model:
+    type: string
+    default: "text-embedding-3-small"
+    description: "OpenAI embedding model name"
+  dimensions:
+    type: integer
+    default: 1536
+    description: "Embedding vector dimensions"
+dependencies: []
+tags:
+  - embedder
+  - openai
+  - cloud
+bundled: true

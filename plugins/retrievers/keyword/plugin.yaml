@@ -1,0 +1,18 @@
+name: keyword
+type: retriever
+version: "1.0.0"
+description: "Keyword-based retriever using BM25 or similar text matching"
+author: "Retrieva Team"
+license: "MIT"
+entry_point: "plugin:KeywordRetrieverPlugin"
+config_schema:
+  top_k:
+    type: integer
+    default: 10
+    description: "Number of top results to return"
+dependencies: []
+tags:
+  - retriever
+  - keyword
+  - bm25
+bundled: true

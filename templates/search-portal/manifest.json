@@ -1,0 +1,8 @@
+{
+  "name": "search-portal",
+  "title": "Search Portal",
+  "description": "Portail de recherche semantique avec resultats instantanes. Parfait pour la documentation.",
+  "type": "search",
+  "version": "1.0.0",
+  "files": ["index.html", "styles.css", "app.js"]
+}

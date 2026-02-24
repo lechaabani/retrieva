@@ -1,0 +1,21 @@
+name: github
+type: connector
+version: "1.0.0"
+description: "GitHub connector for ingesting repository contents and documentation"
+author: "Retrieva Team"
+license: "MIT"
+entry_point: "plugin:GitHubConnectorPlugin"
+config_schema:
+  repo:
+    type: string
+    description: "GitHub repository in owner/repo format"
+  token:
+    type: string
+    description: "GitHub personal access token"
+dependencies: []
+tags:
+  - connector
+  - github
+  - git
+  - code
+bundled: true

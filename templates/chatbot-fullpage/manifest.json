@@ -1,0 +1,8 @@
+{
+  "name": "chatbot-fullpage",
+  "title": "Chatbot Full Page",
+  "description": "Application de chatbot pleine page, style ChatGPT. Ideal pour un portail d'assistance.",
+  "type": "chatbot",
+  "version": "1.0.0",
+  "files": ["index.html", "styles.css", "app.js"]
+}

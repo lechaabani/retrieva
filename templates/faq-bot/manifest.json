@@ -1,0 +1,8 @@
+{
+  "name": "faq-bot",
+  "title": "FAQ Bot",
+  "description": "Interface FAQ interactive avec questions suggerees et reponses conversationnelles.",
+  "type": "faq",
+  "version": "1.0.0",
+  "files": ["index.html", "styles.css", "app.js"]
+}

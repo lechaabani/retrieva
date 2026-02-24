@@ -1,0 +1,46 @@
+name: rest-api
+type: connector
+version: "1.0.0"
+description: "Generic REST API connector with configurable endpoints, auth, and pagination"
+author: "Retrieva Team"
+license: "MIT"
+entry_point: "plugin:RestAPIConnectorPlugin"
+config_schema:
+  base_url:
+    type: string
+    description: "Base URL for the API (e.g. https://api.example.com/v1)"
+  endpoints:
+    type: array
+    description: "List of endpoint configuration objects"
+  auth_type:
+    type: string
+    description: "Authentication type: bearer, basic, or api_key"
+  auth_token:
+    type: string
+    description: "Bearer token value"
+  auth_username:
+    type: string
+    description: "Username for basic auth"
+  auth_password:
+    type: string
+    description: "Password for basic auth"
+  api_key_header:
+    type: string
+    description: "Header name for API key auth"
+  api_key_value:
+    type: string
+    description: "API key value"
+  headers:
+    type: object
+    description: "Additional headers to include in all requests"
+  max_pages:
+    type: integer
+    default: 50
+    description: "Default maximum pages for pagination"
+dependencies: []
+tags:
+  - connector
+  - rest-api
+  - generic
+  - http
+bundled: true

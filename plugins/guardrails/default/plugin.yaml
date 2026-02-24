@@ -1,0 +1,18 @@
+name: default
+type: guardrail
+version: "1.0.0"
+description: "Default guardrails for content filtering and safety checks"
+author: "Retrieva Team"
+license: "MIT"
+entry_point: "plugin:DefaultGuardrailPlugin"
+config_schema:
+  enabled:
+    type: boolean
+    default: true
+    description: "Enable or disable guardrail checks"
+dependencies: []
+tags:
+  - guardrail
+  - safety
+  - content-filter
+bundled: true

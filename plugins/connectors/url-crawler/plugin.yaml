@@ -1,0 +1,22 @@
+name: url-crawler
+type: connector
+version: "1.0.0"
+description: "URL crawler connector for ingesting web pages with configurable depth"
+author: "Retrieva Team"
+license: "MIT"
+entry_point: "plugin:URLCrawlerConnectorPlugin"
+config_schema:
+  max_depth:
+    type: integer
+    default: 3
+    description: "Maximum crawl depth from the starting URL"
+  max_pages:
+    type: integer
+    default: 50
+    description: "Maximum number of pages to crawl"
+dependencies: []
+tags:
+  - connector
+  - url-crawler
+  - web
+bundled: true

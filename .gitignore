@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+*.env.local
+
+# Data
+data/
+uploads/
+*.pdf
+*.docx
+*.xlsx
+
+# Docker
+docker-compose.override.yml
+
+# Node / Dashboard
+dashboard/node_modules/
+dashboard/.next/
+dashboard/out/
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Config (keep .example versions)
+config.yaml
+
+# Claude
+.claude/
+
+# Misc
+*.log
+.DS_Store

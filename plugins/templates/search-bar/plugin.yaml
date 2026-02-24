@@ -1,0 +1,27 @@
+name: search-bar
+type: template
+version: "1.0.0"
+description: "Embeddable search bar widget with instant results for websites"
+author: "Retrieva Team"
+license: "MIT"
+entry_point: "plugin:SearchBarPlugin"
+config_schema:
+  placeholder:
+    type: string
+    default: "Search..."
+    description: "Input placeholder text"
+  api_endpoint:
+    type: string
+    default: "/api/v1/search"
+    description: "Backend API endpoint for search"
+  debounce_ms:
+    type: integer
+    default: 300
+    description: "Debounce delay in milliseconds for search input"
+dependencies: []
+tags:
+  - template
+  - search
+  - widget
+  - frontend
+bundled: true

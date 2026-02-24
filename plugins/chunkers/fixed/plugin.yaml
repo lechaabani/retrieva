@@ -1,0 +1,22 @@
+name: fixed
+type: chunker
+version: "1.0.0"
+description: "Fixed-size text chunker with configurable chunk size and overlap"
+author: "Retrieva Team"
+license: "MIT"
+entry_point: "plugin:FixedChunkerPlugin"
+config_schema:
+  chunk_size:
+    type: integer
+    default: 512
+    description: "Number of characters per chunk"
+  chunk_overlap:
+    type: integer
+    default: 64
+    description: "Number of overlapping characters between chunks"
+dependencies: []
+tags:
+  - chunker
+  - fixed-size
+  - ingestion
+bundled: true

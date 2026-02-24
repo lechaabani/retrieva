@@ -1,0 +1,14 @@
+name: metadata-enricher
+type: transformer
+version: "1.0.0"
+description: "Enriches document metadata with word count, language detection, and reading time"
+author: "Retrieva Team"
+license: "MIT"
+entry_point: "plugin:MetadataEnricherPlugin"
+config_schema: {}
+dependencies: []
+tags:
+  - transformer
+  - metadata
+  - language-detection
+bundled: true
