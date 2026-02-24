@@ -100,7 +100,7 @@ export default function QuickStartPage() {
       <div className="mb-12">
         <Step num={1} title="Clonez le repository">
           <p>R&eacute;cup&eacute;rez le code source depuis GitHub.</p>
-          <CodeBlock code="git clone https://github.com/retrieva-ai/retrieva.git
+          <CodeBlock code="git clone https://github.com/lechaabani/retrieva.git
 cd retrieva" />
         </Step>
 

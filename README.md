@@ -72,7 +72,7 @@ Like WordPress transformed web publishing, Retrieva transforms RAG -- making pow
 Get Retrieva running locally in under two minutes:
 
 ```bash
-git clone https://github.com/retrieva-ai/retrieva.git
+git clone https://github.com/lechaabani/retrieva.git
 cd retrieva
 cp .env.example .env          # Add your OPENAI_API_KEY here
 docker compose up -d
@@ -357,7 +357,7 @@ Retrieva is open-source software licensed under the [MIT License](LICENSE).
 
 If you find Retrieva useful, please consider giving it a star. It helps others discover the project.
 
-[Star Retrieva on GitHub](https://github.com/retrieva-ai/retrieva)
+[Star Retrieva on GitHub](https://github.com/lechaabani/retrieva)
 
 ---
 

@@ -184,7 +184,7 @@ export default function UpgradePage() {
           icon={<Zap className="h-5 w-5" />}
           isCurrent={currentTier === "community"}
           ctaLabel="Telecharger"
-          ctaHref="https://github.com/retrieva-ai/retrieva"
+          ctaHref="https://github.com/lechaabani/retrieva"
           features={[
             "Dashboard & Overview",
             "Playground (chat + search)",

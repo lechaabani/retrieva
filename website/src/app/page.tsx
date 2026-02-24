@@ -134,7 +134,7 @@ function Navbar() {
     { label: "Comment ca marche", href: "#how-it-works" },
     { label: "Documentation", href: "/docs" },
     { label: "Open Source", href: "#open-source" },
-    { label: "GitHub", href: "https://github.com/retrieva-ai/retrieva" },
+    { label: "GitHub", href: "https://github.com/lechaabani/retrieva" },
   ];
 
   return (
@@ -172,7 +172,7 @@ function Navbar() {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="https://github.com/retrieva-ai/retrieva"
+              href="https://github.com/lechaabani/retrieva"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-600 text-white text-sm font-medium hover:bg-indigo-500 transition-all shadow-lg shadow-indigo-600/25 hover:shadow-indigo-500/40 hover:-translate-y-0.5"
             >
               Commencer
@@ -206,7 +206,7 @@ function Navbar() {
             ))}
             <div className="pt-3 border-t border-white/5">
               <a
-                href="https://github.com/retrieva-ai/retrieva"
+                href="https://github.com/lechaabani/retrieva"
                 onClick={() => setMobileOpen(false)}
                 className="block w-full text-center px-4 py-3 bg-indigo-600 text-white rounded-lg font-medium"
               >
@@ -273,14 +273,14 @@ function Hero() {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
           <a
-            href="https://github.com/retrieva-ai/retrieva"
+            href="https://github.com/lechaabani/retrieva"
             className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-indigo-600 text-white font-semibold text-base hover:bg-indigo-500 transition-all shadow-2xl shadow-indigo-600/25 hover:shadow-indigo-500/40 hover:-translate-y-0.5"
           >
             Commencer
             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
           </a>
           <a
-            href="https://github.com/retrieva-ai/retrieva"
+            href="https://github.com/lechaabani/retrieva"
             className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-full border border-white/15 text-white font-semibold text-base hover:bg-white/5 hover:border-white/25 transition-all hover:-translate-y-0.5"
           >
             <Github className="w-5 h-5" />
@@ -573,7 +573,7 @@ function HowItWorks() {
 function CodeExample() {
   const lines = [
     { text: "# Self-hosted en 5 minutes", type: "comment" },
-    { text: "git clone https://github.com/retrieva-ai/retrieva.git", type: "command" },
+    { text: "git clone https://github.com/lechaabani/retrieva.git", type: "command" },
     { text: "cd retrieva && cp .env.example .env", type: "command" },
     { text: "docker compose up -d", type: "command" },
     { text: "", type: "empty" },
@@ -705,7 +705,7 @@ function OpenSource() {
         {/* CTA */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="https://github.com/retrieva-ai/retrieva"
+            href="https://github.com/lechaabani/retrieva"
             className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-semibold hover:bg-white/10 hover:border-white/20 transition-all hover:-translate-y-0.5"
           >
             <Github className="w-5 h-5" />
@@ -713,7 +713,7 @@ function OpenSource() {
             <ExternalLink className="w-4 h-4 text-gray-500 group-hover:text-gray-300 transition-colors" />
           </a>
           <a
-            href="https://github.com/retrieva-ai/retrieva"
+            href="https://github.com/lechaabani/retrieva"
             className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full text-gray-400 hover:text-white transition-colors"
           >
             <Users className="w-5 h-5" />
@@ -754,7 +754,7 @@ function FinalCTA() {
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
             <a
-              href="https://github.com/retrieva-ai/retrieva"
+              href="https://github.com/lechaabani/retrieva"
               className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-indigo-600 text-white font-semibold text-base hover:bg-indigo-500 transition-all shadow-2xl shadow-indigo-600/25 hover:shadow-indigo-500/40 hover:-translate-y-0.5"
             >
               <Github className="w-5 h-5" />
@@ -804,7 +804,7 @@ function Footer() {
     {
       title: "Communaut\u00e9",
       links: [
-        { label: "GitHub", href: "https://github.com/retrieva-ai/retrieva" },
+        { label: "GitHub", href: "https://github.com/lechaabani/retrieva" },
         { label: "Discord", href: "#" },
         { label: "Twitter", href: "#" },
       ],
@@ -863,7 +863,7 @@ function Footer() {
             &copy; 2025 Retrieva. Open source avec &hearts;
           </p>
           <div className="flex items-center gap-4">
-            <a href="https://github.com/retrieva-ai/retrieva" className="text-gray-600 hover:text-gray-400 transition-colors">
+            <a href="https://github.com/lechaabani/retrieva" className="text-gray-600 hover:text-gray-400 transition-colors">
               <Github className="w-5 h-5" />
             </a>
             <a href="#" className="text-gray-600 hover:text-gray-400 transition-colors">

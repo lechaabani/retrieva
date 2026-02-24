@@ -578,7 +578,7 @@ function HowItWorks() {
 function CodeExample() {
   const lines = [
     { text: "# Self-hosted en 5 minutes", type: "comment" },
-    { text: "git clone https://github.com/retrieva-ai/retrieva.git", type: "command" },
+    { text: "git clone https://github.com/lechaabani/retrieva.git", type: "command" },
     { text: "cd retrieva && cp .env.example .env", type: "command" },
     { text: "docker compose up -d", type: "command" },
     { text: "", type: "empty" },

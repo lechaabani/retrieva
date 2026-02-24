@@ -78,7 +78,7 @@ export function UpgradeBanner({
             <p className="text-xs text-text-muted">
               Ou{" "}
               <a
-                href="https://github.com/retrieva-ai/retrieva"
+                href="https://github.com/lechaabani/retrieva"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline hover:text-text-secondary transition-colors"
