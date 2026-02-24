@@ -1,0 +1,13 @@
+pyproject.toml
+api/
+core/
+workers/
+plugins/
+alembic/
+tests/
+sdks/
+cli/
+templates/
+docs/
+dashboard/
+*.py
